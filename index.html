@@ -6,19 +6,97 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body style="background-color: whitesmoke;"> 
-	<img src="https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg" style="margin-left: 950px;https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg>
+	<ul>
+		<div>
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="#news">Order Now</a></li>
+		<li><a href="#contact">Contact</a></li>
+	    </div>
+		<div id="name">
+		<li class="active"><a href="signup.html">Sign Up</a></li>
+	    <li class="danger"><a href="Login.html">Login</a></li>
+     	</div>
+	  </ul>
 
-<h1 style="font-size:50px;>FOODY</h1>
-<h2 id="Order"> food from favourite rest</h2>
 
-<p>Order food from favourite restaurents near you</p>
-<ul style ="display: inline-block;>
-	<li><a href="customercare.html>Contact Us</a></li>
-	<li><a href="signup.html">Signup</a></li>
-	<li><a href="Login.html">Login</a></li>
+	<div class="image">
+		<img id="shadow" src="https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg" style="margin:5%;https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg">
+	<div class="" id="shadow1" style="height: 500px ;width:500px;">
+		<h1 style="font-size:50px;">FOODY</h1>
+		<h2 id="Order"> food from favourite rest</h2>
+		<p>Order food from favourite restaurents near you</p>
+	</div>
+	</div>
+    
+	
+	 <ul style ="display: inline-block;">
+	
+	</ul>
 
-</ul>
 
 </body>
 
 </html>
+
+
+
+
+
+<style>
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+#name{
+	position:fixed;
+	right:100px;	
+}
+.danger{
+	background-color: red;
+}
+#shadow{
+	box-shadow: 10px 10px 5px grey;
+}
+.image{
+  display: flex;
+  flex-direction: row;
+}
+
+#shadow1 {
+	box-shadow: 5px 5px 10px  grey;
+}
+</style>
+
+
+
