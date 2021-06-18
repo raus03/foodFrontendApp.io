@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Signup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container " >
+  <div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+  <h4 class="card-title mt-3 text-center">Create Account</h4>
+  
+  <form onsubmit="submit()">
+  <div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+     </div>
+        <input name="firstName" id="firstName" class="form-control" placeholder="First name" type="text" value="">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+    </div>
+      <input name="lastName" id="lastName" class="form-control" placeholder="Last Name" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+     </div>
+        <input id="email" name="" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+     <!-- form-group end.// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+    </div>
+        <input id="password" class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                              
+    <div class="form-group">
+        <button type="button" class="btn btn-outline-primary btn-block" onclick="submitForm()"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a href="" style="margin-left: 60px;">Log In</a> </p>                                                                 
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div>
+
+</body>
+</html>
+<style type="text/css">
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+}
+
+</style>
+
+<script>
+  function submitForm(){
+    const email=document.getElementById("email").value
+    const password=document.getElementById("password").value
+    const firstName=document.getElementById("firstName").value
+    const lastName=document.getElementById("lastName").value
+  
+
+     console.log(firstName.value)
+
+     fetch('http://localhost:8080/signUp',{
+    method:"POST",
+    body:JSON.stringify({firstName:firstName,lastName:lastName,email:email,password:password}),
+    headers:{
+        "content-Type":"application/json",
+    }
+}).then((r)=>{
+    console.log(r);
+    location.replace("./Homepage.html")
+}).catch((e)=>{
+    console.log("error"+e);
+})
+
+  }
+</script>
