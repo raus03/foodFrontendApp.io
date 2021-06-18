@@ -60,10 +60,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <span class="close">&times;</span>
     <p>Invalid Input ...</p>
     <p>Recheck user name and password</p>
+    
   </div>
 
 </div>
-
+<button onclick="navigate()"> navigate to sign up</button>
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -90,6 +91,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+function navigate(){
+    location.replace("./signup.html")
+}
+
 </script>
 
 </body>
